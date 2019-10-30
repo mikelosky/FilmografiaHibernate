@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/filmatografia">
+	<WatchedResource>WEB-INF/web.xml</WatchedResource>
+	<ResourceLink global="jdbc/filmatografia" name="jdbc/filmatografia"   type="javax.sql.DataSource">
+	</ResourceLink>
+</Context>
