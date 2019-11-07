@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<link href="menucp.css" rel="stylesheet" type="text/css">
+<link href="menunewfi.css" rel="stylesheet" type="text/css">
 <title>Inserisci il nuovo Film</title>
 </head>
 <body>
@@ -14,22 +14,27 @@
 
 		<div id="subscribeBox">
 			<h2>
-				<span class="thin"></span>
+				<span class="thin"><p>Inserire il nuovo Film</p></span>
 			</h2>
-			<p>Inserire la nuova Casa Produttrice</p>
 
 			<!-- Start Here: Web Form tutorial -->
 			<form class="subscribeForm" name="Subscription Form" method="post"
 				action="newFilm">
 
-				<input id="nome" type="text" plnewFilmaceholder="Nome Casa Produttrice"	name="nome" required> 
+				<input id="nome" type="text" placeholder="Nome Film" name="nome" required>
 				<!-- Step 1: Add an email field here -->
-				<input id="anno_uscita" type="number" placeholder="Anno Uscita" name="anno_uscita" required>
-				<input id="incassi" type="number" placeholder="" name="incassi" required>
-				
+				<input id="anno_uscita" type="number" placeholder="Anno Uscita"	name="anno_uscita" required> 
+				<input id="incassi"	type="number" placeholder="Incassi Totali" name="incassi" required> 
+				<select id="id_casa_prod">
+					<option > </option>
+					<c:forEach var="current" items="${listCP}">
+						<option value="${current.getid_Cas_Prod()}">
+							${current.getNome()}</option>
+					</c:forEach>
+				</select>
+
 				<!-- Step 2: Add an address field here -->
-				<input id="img" type="text" placeholder="Inserisci path Immagine"
-					name="img">
+				<input id="img" type="text" placeholder="Inserisci path Immagine" name="img">
 				<!-- Step 3: add a submit button here -->
 				<input id="submit" type="submit" value="Inserisci">
 
