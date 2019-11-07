@@ -37,7 +37,6 @@
 				<input id="submit" type="submit" value="Inserisci">
 
 			</form>
-
 		</div>
 	</div>
 </body>

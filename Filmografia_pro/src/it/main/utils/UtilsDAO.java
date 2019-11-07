@@ -14,6 +14,7 @@ import javax.persistence.criteria.Root;
 
 import it.main.model.Attori;
 import it.main.model.CaseProduttrici;
+import it.main.model.Film;
 
 public class UtilsDAO {
 	protected static EntityManager em;
@@ -55,6 +56,9 @@ public class UtilsDAO {
 //		List<CaseProduttrici> allCaseProduttrici = q.getResultList();
 //		return allCaseProduttrici;
 //	}
+	public CaseProduttrici getCaseProduttrici(int id) throws SQLException{
+		return em.find(CaseProduttrici.class, id);
+	}
 	
 	public void newAttori(Attori attori) throws SQLException {
 		tx.begin();
@@ -70,6 +74,22 @@ public class UtilsDAO {
 		TypedQuery<Attori> q = em.createQuery(cq);
 		List<Attori> allAttori = q.getResultList();
 		return allAttori;
+	}
+	
+	public void newFilm(Film film) throws SQLException {
+		tx.begin();
+		em.merge(film);
+		tx.commit();
+	}
+	
+	public List<Film> getFilm() throws SQLException {
+		CriteriaBuilder cb = em.getCriteriaBuilder();
+		CriteriaQuery<Film> cq = cb.createQuery(Film.class);
+		Root<Film> film = cq.from(Film.class);
+		cq.select(film);
+		TypedQuery<Film> q = em.createQuery(cq);
+		List<Film> allFilm = q.getResultList();
+		return allFilm;
 	}
 
 }
