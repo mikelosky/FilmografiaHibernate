@@ -18,7 +18,7 @@
 		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
 		<a href="newcp.jsp">New Casa Produttrice</a> 
 		<a href="newat.jsp">New	Attore</a> 
-		<a href="newFilm">New	Film</a>
+		<a href="newFilm">New Film</a>
 		<a href="#">Contact</a>
 	</div>
 	

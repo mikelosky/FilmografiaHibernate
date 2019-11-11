@@ -27,10 +27,10 @@
 				<input id="anno_uscita" type="number" placeholder="Anno Uscita"	name="anno_uscita" required> 
 				<input id="incassi"	type="number" placeholder="Incassi Totali" name="incassi" required> 
 				<p>Seleziona la casa produttrice</p>
-				<select id="id_casa_prod">
+				<select id="id_casa_prod" name="id_casa_prod">
 					<option > </option>
 					<c:forEach var="current" items="${listCP}">
-						<option value="${current.getid_Cas_Prod()}">
+						<option name="id_casa_prod" value="${current.getid_Cas_Prod()}">
 							${current.getNome()}</option>
 					</c:forEach>
 				</select>

@@ -77,8 +77,10 @@ public class newFilm extends HttpServlet {
 
 		try {
 			dao.newFilm(film);
-			request.setAttribute("listaFilm", dao.getFilm());	    
+			request.setAttribute("listaCaseProduttrici", dao.getCaseProduttrici());	    
 			request.getRequestDispatcher("/index.jsp").forward(request, response);
+//			request.setAttribute("listaFilm", dao.getFilm());	    
+//			request.getRequestDispatcher("/index.jsp").forward(request, response);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

@@ -39,11 +39,11 @@ public class Film implements Serializable {
 	
 	@ManyToMany(cascade = { CascadeType.ALL })
     @JoinTable(
-        name = "performano", 
+        name = "perfomano", 
         joinColumns = { @JoinColumn(name = "id_film") }, 
         inverseJoinColumns = { @JoinColumn(name = "id_attori") }
     )
-    Set<Attori> attori = new HashSet<>();
+    private Set<Attori> attori = new HashSet<>();
 
 	public int getid_Film() {
 		return id_film;
