@@ -2,6 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,6 +26,7 @@
 				<!-- Step 1: Add an email field here -->
 				<input id="anno_uscita" type="number" placeholder="Anno Uscita"	name="anno_uscita" required> 
 				<input id="incassi"	type="number" placeholder="Incassi Totali" name="incassi" required> 
+				<p>Seleziona la casa produttrice</p>
 				<select id="id_casa_prod">
 					<option > </option>
 					<c:forEach var="current" items="${listCP}">

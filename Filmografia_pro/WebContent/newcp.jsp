@@ -13,10 +13,9 @@
 
 		<div id="subscribeBox">
 			<h2>
-				<span class="thin"></span>
+				<span class="thin"><p>Inserire la nuova Casa Produttrice</p></span>
 			</h2>
-			<p>Inserire la nuova Casa Produttrice</p>
-
+			
 			<!-- Start Here: Web Form tutorial -->
 			<form class="subscribeForm" name="Subscription Form" method="post"
 				action="newCasaProd" >

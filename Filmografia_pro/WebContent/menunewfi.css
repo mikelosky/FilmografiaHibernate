@@ -217,6 +217,7 @@ h2 {
 
 .thin {
 	font-weight: 200;
+	text-align: center;
 }
 
 a {
@@ -241,4 +242,5 @@ p {
 	font-weight: 300;
 	font-family: source-sans-pro;
 	sans-serif;
+	text-align: center
 }
