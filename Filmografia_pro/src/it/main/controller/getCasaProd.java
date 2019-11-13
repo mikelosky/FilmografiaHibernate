@@ -59,7 +59,7 @@ public class getCasaProd extends HttpServlet {
 		try {
 			List<CaseProduttrici> listCP = dao.getCaseProduttrici();
 			request.setAttribute("listCP", listCP);
-			RequestDispatcher view = request.getRequestDispatcher("/showcasepro.jsp");
+			RequestDispatcher view = request.getRequestDispatcher("/index.jsp");
 			view.forward(request, response);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

@@ -37,7 +37,7 @@ public class Film implements Serializable {
 	@JoinColumn(name = "id_casa_prod")
 	private CaseProduttrici case_produttrici;
 	
-	@ManyToMany(cascade = { CascadeType.ALL })
+	@ManyToMany
     @JoinTable(
         name = "perfomano", 
         joinColumns = { @JoinColumn(name = "id_film") }, 

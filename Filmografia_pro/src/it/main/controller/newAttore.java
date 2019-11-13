@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import it.main.model.CaseProduttrici;
 import it.main.model.Attori;
 import it.main.utils.UtilsDAO;
 
@@ -48,7 +49,7 @@ public class newAttore extends HttpServlet {
 		String nome = request.getParameter("nome");
 		String cognome = request.getParameter("cognome");
 		int anno_nascita = Integer.parseInt(request.getParameter("anno_nascita"));
-		int anno_inizio = Integer.parseInt(request.getParameter("anno_anizio"));
+		int anno_inizio = Integer.parseInt(request.getParameter("anno_inizio"));
 		String img = request.getParameter("img");
 		Attori attori = new Attori();
 		attori.setNome(nome);
@@ -59,8 +60,8 @@ public class newAttore extends HttpServlet {
 
 		try {
 			dao.newAttori(attori);
-			request.setAttribute("listaAttori", dao.getAttori());	    
-			request.getRequestDispatcher("/index.jsp").forward(request, response);
+			request.setAttribute("listaCaseProduttrici", dao.getCaseProduttrici());	    
+			request.getRequestDispatcher("doCasaProd").forward(request, response);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

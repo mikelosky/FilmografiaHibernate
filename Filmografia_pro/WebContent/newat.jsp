@@ -18,7 +18,7 @@
 
 			<!-- Start Here: Web Form tutorial -->
 			<form class="subscribeForm" name="Subscription Form" method="post"
-				action="newCasaProd">
+				action="newAttore">
 
 				<input id="nome" type="text" placeholder="Nome Attore"
 					name="nome" required> 

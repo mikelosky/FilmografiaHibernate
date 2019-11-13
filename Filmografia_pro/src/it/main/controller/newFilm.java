@@ -42,6 +42,8 @@ public class newFilm extends HttpServlet {
 		try {
 			List<CaseProduttrici> listCP = dao.getCaseProduttrici();
 			request.setAttribute("listCP", listCP);
+			List<Attori> listA = dao.getAttori();
+			request.setAttribute("listA", listA);
 			RequestDispatcher view = request.getRequestDispatcher("/newfi.jsp");
 			view.forward(request, response);
 		} catch (SQLException e) {
@@ -62,6 +64,7 @@ public class newFilm extends HttpServlet {
 		int anno_uscita = Integer.parseInt(request.getParameter("anno_uscita"));
 		int incassi = Integer.parseInt(request.getParameter("incassi"));
 		int id_casa_prod = Integer.parseInt(request.getParameter("id_casa_prod"));
+		int id_attori = Integer.parseInt(request.getParameter("id_attori"));
 		String img = request.getParameter("img");
 		Film film = new Film();
 		film.setNome(nome);
@@ -78,7 +81,7 @@ public class newFilm extends HttpServlet {
 		try {
 			dao.newFilm(film);
 			request.setAttribute("listaCaseProduttrici", dao.getCaseProduttrici());	    
-			request.getRequestDispatcher("/index.jsp").forward(request, response);
+			request.getRequestDispatcher("doCasaProd").forward(request, response);
 //			request.setAttribute("listaFilm", dao.getFilm());	    
 //			request.getRequestDispatcher("/index.jsp").forward(request, response);
 		} catch (SQLException e) {

@@ -54,7 +54,7 @@ public class newCasaProd extends HttpServlet {
 		try {
 			dao.newCaseProduttrici(case_produttrici);
 			request.setAttribute("listaCaseProduttrici", dao.getCaseProduttrici());	    
-			request.getRequestDispatcher("/index.jsp").forward(request, response);
+			request.getRequestDispatcher("doCasaProd").forward(request, response);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
