@@ -2,6 +2,7 @@ package it.main.controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,21 +10,22 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import it.main.model.CaseProduttrici;
+import it.main.model.Attori;
+import it.main.model.Film;
 import it.main.utils.UtilsDAO;
 
 /**
- * Servlet implementation class newCasaProd
+ * Servlet implementation class updateFilm
  */
-@WebServlet("/newCasaProd")
-public class newCasaProd extends HttpServlet {
+@WebServlet("/updateFilm")
+public class updateFilm extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private UtilsDAO dao = UtilsDAO.getInstance();
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public newCasaProd() {
+    public updateFilm() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,32 +35,26 @@ public class newCasaProd extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.getRequestDispatcher("/newcp.jsp").forward(request, response);
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		String nome = request.getParameter("nome");
-		int anno_fondazione = Integer.parseInt(request.getParameter("anno_fondazione"));
-		String sede_principale = request.getParameter("sede_principale");
-		String img = request.getParameter("img");
-		CaseProduttrici case_produttrici = new CaseProduttrici();
-		
-		case_produttrici.setNome(nome);
-		case_produttrici.setFondazione(anno_fondazione);
-		case_produttrici.setSede(sede_principale);
-		case_produttrici.setImg(img);
-
+		int id_last = Integer.parseInt(request.getParameter("id_film"));
 		try {
-			dao.newCaseProduttrici(case_produttrici);
-			request.setAttribute("listaCaseProduttrici", dao.getCaseProduttrici());	    
-			request.getRequestDispatcher("doCasaProd").forward(request, response);
+		Film film_last = dao.getFilm(id_last);
+		request.setAttribute("film_Last", film_last);
+		List<Attori> listA = dao.getAttori();
+		request.setAttribute("listA", listA);
 		} catch (SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		/* request.setAttribute("listaCaseProduttrici", dao.getCaseProduttrici()); */
+		request.getRequestDispatcher("performano.jsp").forward(request, response);
+		
 	}
 
 }

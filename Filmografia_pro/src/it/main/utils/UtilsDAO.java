@@ -60,6 +60,14 @@ public class UtilsDAO {
 		return em.find(CaseProduttrici.class, id);
 	}
 	
+	public Film getFilm(int id) throws SQLException{
+		return em.find(Film.class, id);
+	}
+	
+	public Attori getAttori(int id) throws SQLException{
+		return em.find(Attori.class, id);
+	}
+	
 	public void newAttori(Attori attori) throws SQLException {
 		tx.begin();
 		em.merge(attori);
@@ -90,6 +98,14 @@ public class UtilsDAO {
 		TypedQuery<Film> q = em.createQuery(cq);
 		List<Film> allFilm = q.getResultList();
 		return allFilm;
+	}
+	
+	public int lastFilm(Film film) throws SQLException {
+		Film mFilm;
+		tx.begin();
+		mFilm = em.merge(film);
+		tx.commit();
+		return mFilm.getId();
 	}
 
 }

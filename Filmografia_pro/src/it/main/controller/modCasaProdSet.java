@@ -13,17 +13,17 @@ import it.main.model.CaseProduttrici;
 import it.main.utils.UtilsDAO;
 
 /**
- * Servlet implementation class newCasaProd
+ * Servlet implementation class modCasaProdSet
  */
-@WebServlet("/newCasaProd")
-public class newCasaProd extends HttpServlet {
+@WebServlet("/modCasaProdSet")
+public class modCasaProdSet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private UtilsDAO dao = UtilsDAO.getInstance();
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public newCasaProd() {
+    public modCasaProdSet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,7 +33,7 @@ public class newCasaProd extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.getRequestDispatcher("/newcp.jsp").forward(request, response);
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
@@ -41,12 +41,16 @@ public class newCasaProd extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub
+		int id = Integer.parseInt(request.getParameter("id"));
 		String nome = request.getParameter("nome");
 		int anno_fondazione = Integer.parseInt(request.getParameter("anno_fondazione"));
 		String sede_principale = request.getParameter("sede_principale");
 		String img = request.getParameter("img");
 		CaseProduttrici case_produttrici = new CaseProduttrici();
 		
+		case_produttrici.setid_Cas_Prod(id);
+	
 		case_produttrici.setNome(nome);
 		case_produttrici.setFondazione(anno_fondazione);
 		case_produttrici.setSede(sede_principale);

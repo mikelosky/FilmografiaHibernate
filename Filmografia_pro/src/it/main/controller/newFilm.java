@@ -25,19 +25,21 @@ import it.main.utils.UtilsDAO;
 public class newFilm extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private UtilsDAO dao = UtilsDAO.getInstance();
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public newFilm() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public newFilm() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		try {
 			List<CaseProduttrici> listCP = dao.getCaseProduttrici();
@@ -64,7 +66,7 @@ public class newFilm extends HttpServlet {
 		int anno_uscita = Integer.parseInt(request.getParameter("anno_uscita"));
 		int incassi = Integer.parseInt(request.getParameter("incassi"));
 		int id_casa_prod = Integer.parseInt(request.getParameter("id_casa_prod"));
-		int id_attori = Integer.parseInt(request.getParameter("id_attori"));
+//		int id_attori = Integer.parseInt(request.getParameter("id_attori"));
 		String img = request.getParameter("img");
 		Film film = new Film();
 		film.setNome(nome);
@@ -76,12 +78,18 @@ public class newFilm extends HttpServlet {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
+		
+		
 		film.setImg(img);
 
 		try {
-			dao.newFilm(film);
-			request.setAttribute("listaCaseProduttrici", dao.getCaseProduttrici());	    
-			request.getRequestDispatcher("doCasaProd").forward(request, response);
+			int id_last = dao.lastFilm(film);
+			Film film_last = dao.getFilm(id_last);
+			request.setAttribute("film_Last", film_last);
+			List<Attori> listA = dao.getAttori();
+			request.setAttribute("listA", listA);
+			/* request.setAttribute("listaCaseProduttrici", dao.getCaseProduttrici()); */
+			request.getRequestDispatcher("performano.jsp").forward(request, response);
 //			request.setAttribute("listaFilm", dao.getFilm());	    
 //			request.getRequestDispatcher("/index.jsp").forward(request, response);
 		} catch (SQLException e) {

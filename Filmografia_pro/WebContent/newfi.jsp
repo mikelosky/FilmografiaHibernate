@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width">
-<link href="menunewfi.css" rel="stylesheet" type="text/css">
+<link href="css/menunewfi.css" rel="stylesheet" type="text/css">
 
 <title>Inserisci il nuovo Film</title>
 </head>
@@ -35,20 +35,30 @@
 						<option value="${current.getid_Cas_Prod()}">
 							${current.getNome()}</option>
 					</c:forEach>
-				</select>
+					
+				</select> 
 				
+				<%-- <select multiple="multiple" id="my-select" name="listact">
+					<c:forEach var="currenta" items="${listA}">
+						<option value="${currenta.getid_Attori()}">${currenta.getNome()}</option>
+					</c:forEach>
+				</select> --%>
 				
-				<c:forEach var="currenta" items="${listA}">
-					<input type="checkbox" name="id_attori" value="${currenta.getid_Attori()}" /> ${currenta.getNome()} <br>
-				</c:forEach>
-				
+
+
+				<%-- <c:forEach var="currenta" items="${listA}">
+					<input type="checkbox" name="id_attori"
+						value="${currenta.getid_Attori()}" /> ${currenta.getNome()} <br>
+				</c:forEach> --%>
+
 				<!-- Step 2: Add an address field here -->
-				<input id="img" type="text" placeholder="Inserisci path Immagine"s
+				<input id="img" type="text" placeholder="Inserisci path Immagine" s
 					name="img">
 				<!-- Step 3: add a submit button here -->
 				<input id="submit" type="submit" value="Inserisci">
 			</form>
 		</div>
 	</div>
+	<script src="js/jquery.multi-select.js" type="text/javascript"></script>
 </body>
 </html>

@@ -2,6 +2,7 @@ package it.main.model;
 
 import java.io.Serializable;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -34,7 +35,7 @@ public class Attori implements Serializable{
 	private String img;
 	
 	@ManyToMany(mappedBy = "attori")
-    private Set<Film> film = new HashSet<>();
+    private List<Film> film;
 
 	public int getid_Attori() {
 		return id_attori;
@@ -82,5 +83,13 @@ public class Attori implements Serializable{
 
 	public void setImg(String img) {
 		this.img = img;
+	}
+	
+	public List<Film> getFilm(){
+		return this.film;
+	}
+	
+	public void setFilm(List<Film> film) {
+		this.film = film;
 	}
 }

@@ -93,6 +93,10 @@ input[type=text],input[type=number] {
 	width: 100%;
 }
 
+#id_film{
+	width: 100%;
+}
+
 #img{
 	width: 100%;
 }

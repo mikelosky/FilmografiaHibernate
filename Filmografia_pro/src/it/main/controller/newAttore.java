@@ -46,6 +46,7 @@ public class newAttore extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
 		String nome = request.getParameter("nome");
 		String cognome = request.getParameter("cognome");
 		int anno_nascita = Integer.parseInt(request.getParameter("anno_nascita"));

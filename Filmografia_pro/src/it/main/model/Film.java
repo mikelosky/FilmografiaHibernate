@@ -1,12 +1,11 @@
 package it.main.model;
 
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
-
-import javax.persistence.CascadeType;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
@@ -19,7 +18,9 @@ import javax.persistence.Table;
 public class Film implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
-	private int id_film;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_film")
+	private int id;
 	
 	@Column(name = "nome")
 	private String nome;
@@ -43,16 +44,16 @@ public class Film implements Serializable {
         joinColumns = { @JoinColumn(name = "id_film") }, 
         inverseJoinColumns = { @JoinColumn(name = "id_attori") }
     )
-    private Set<Attori> attori = new HashSet<>();
+    private List<Attori> attori;
 
-	public int getid_Film() {
-		return id_film;
+	public int getId() {
+		return id;
 	}
 
-	public void setid_Film(int id_film) {
-		this.id_film = id_film;
+	public void setId(int id) {
+		this.id = id;
 	}
-
+	
 	public String getNome() {
 		return nome;
 	}
@@ -91,5 +92,13 @@ public class Film implements Serializable {
 
 	public void setcase_Produttrici(CaseProduttrici case_produttrici) {
 		this.case_produttrici = case_produttrici;
+	}
+	
+	public List<Attori> getAttori(){
+		return this.attori;
+	}
+	
+	public void setAttori (List<Attori> attori) {
+		this.attori = attori;
 	}
 }
