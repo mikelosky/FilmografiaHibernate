@@ -21,6 +21,7 @@
 		<a href="newFilm">New Film</a>
 		<a href="newPerformano">New Performano</a>
 		<a href="modCasaProd">Mod Casa Produttrice</a>
+		<a href="modAttore">Mod Attore</a>
 		<a href="#">Contact</a>
 	</div>
 	

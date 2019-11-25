@@ -97,6 +97,10 @@ input[type=text],input[type=number] {
 	width: 100%;
 }
 
+#id_attori{
+	width: 100%;
+}
+
 #img{
 	width: 100%;
 }
