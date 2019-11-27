@@ -19,9 +19,9 @@
 		<a href="newcp.jsp">New Casa Produttrice</a> 
 		<a href="newat.jsp">New	Attore</a> 
 		<a href="newFilm">New Film</a>
-		<a href="newPerformano">New Performano</a>
 		<a href="modCasaProd">Mod Casa Produttrice</a>
 		<a href="modAttore">Mod Attore</a>
+		<a href="modFilm">Mod Film</a>
 		<a href="#">Contact</a>
 	</div>
 	

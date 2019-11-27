@@ -34,6 +34,31 @@ public class UtilsDAO {
 		}
 		return dao;
 	}
+	
+	public void remAttori(int id) throws SQLException {
+		Attori attori = getAttori(id);
+		
+		tx.begin();
+		em.remove(attori);
+		tx.commit();
+	}	
+	
+	public void remCaseProduttrici(int id) throws SQLException {
+		CaseProduttrici case_produttrici = getCaseProduttrici(id);
+		
+		tx.begin();
+		em.remove(case_produttrici);
+		tx.commit();
+	}
+	
+	public void remFilm(int id) throws SQLException {
+		Film film = getFilm(id);
+		
+		tx.begin();
+		em.remove(film);
+		tx.commit();
+	}
+	
 
 	public void newCaseProduttrici(CaseProduttrici case_produttrici) throws SQLException {
 		tx.begin();

@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import it.main.model.Attori;
 import it.main.model.Film;
+import it.main.model.CaseProduttrici;
 import it.main.utils.UtilsDAO;
 
 /**
@@ -53,7 +54,15 @@ public class modFilm extends HttpServlet {
 		try {
 			Film film = dao.getFilm(id);
 			request.setAttribute("film", film);
-			request.getRequestDispatcher("modattore.jsp").forward(request, response);
+			CaseProduttrici  casaproduttrice = film.getcase_Produttrici();
+			request.setAttribute("casaproduttrice", casaproduttrice);
+			List<Attori> listATI = film.getAttori();
+			request.setAttribute("listATI", listATI);
+			List<CaseProduttrici> listCP = dao.getCaseProduttrici();
+			request.setAttribute("listCP", listCP);
+			List<Attori> listA = dao.getAttori();
+			request.setAttribute("listA", listA);
+			request.getRequestDispatcher("modfilm.jsp").forward(request, response);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

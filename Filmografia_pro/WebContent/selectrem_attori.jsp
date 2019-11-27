@@ -6,24 +6,24 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<meta name="viewport" content="width=device-width">
+<title>Insert title here</title>
 <link href="css/menunewfi.css" rel="stylesheet" type="text/css">
-<title>Mod Attore</title>
 </head>
 <body>
 	<div id="wrapper">
 		<div id="subscribeBox">
 			<h2>
-				<span class="thin"><p>Seleziona il film da modificare.</p></span>
+				<span class="thin"><p>Seleziona la casa produttrice da modificare.</p></span>
 			</h2>
 
 			<form class="subscribeForm" name="Subscription Form" method="post"
-				action="modFilm">
+				action="modAttore">
 
-				<select id="id_casa_prod" name="id">
+				<p>Seleziona Attori</p>
+				<select id="id_attori" name="id_attori">
 					<option></option>
-					<c:forEach var="current" items="${listF}">
-						<option value="${current.getId()}">
+					<c:forEach var="current" items="${listA}">
+						<option value="${current.getid_Attori()}">
 							${current.getNome()}</option>
 					</c:forEach>
 					
