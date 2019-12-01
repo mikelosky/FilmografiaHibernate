@@ -1,6 +1,7 @@
 package it.main.controller;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -36,7 +37,7 @@ public class remAttore extends HttpServlet {
 		try {
 			List<Attori> listA = dao.getAttori();
 			request.setAttribute("listA", listA);
-			request.getRequestDispatcher("selectattori.jsp").forward(request, response);
+			request.getRequestDispatcher("selectrem_attori.jsp").forward(request, response);
 			}
 			catch (Exception e) {
 				e.printStackTrace();
@@ -49,6 +50,12 @@ public class remAttore extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int id_attore = Integer.parseInt(request.getParameter("id_attori"));
 		
+		try {
+			dao.remAttori(id_attore);	    
+			request.getRequestDispatcher("doCasaProd").forward(request, response);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 }

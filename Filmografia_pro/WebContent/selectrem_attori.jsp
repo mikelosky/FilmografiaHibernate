@@ -13,11 +13,11 @@
 	<div id="wrapper">
 		<div id="subscribeBox">
 			<h2>
-				<span class="thin"><p>Seleziona la casa produttrice da modificare.</p></span>
+				<span class="thin"><p>Seleziona la casa produttrice da rimuovere.</p></span>
 			</h2>
 
 			<form class="subscribeForm" name="Subscription Form" method="post"
-				action="modAttore">
+				action="remAttore">
 
 				<p>Seleziona Attori</p>
 				<select id="id_attori" name="id_attori">
