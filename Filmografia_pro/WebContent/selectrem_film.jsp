@@ -6,24 +6,24 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Rimuovere Attori</title>
+<title>Rimuovere Film</title>
 <link href="css/menunewfi.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<div id="wrapper">
 		<div id="subscribeBox">
 			<h2>
-				<span class="thin"><p>Seleziona l`attore da rimuovere.</p></span>
+				<span class="thin"><p>Seleziona il film da rimuovere.</p></span>
 			</h2>
 
 			<form class="subscribeForm" name="Subscription Form" method="post"
-				action="remAttore">
+				action="remFilm">
 
-				<p>Seleziona Attori</p>
-				<select id="id_attori" name="id_attori">
+				<p>Seleziona Film</p>
+				<select id="id_film" name="id_film">
 					<option></option>
-					<c:forEach var="current" items="${listA}">
-						<option value="${current.getid_Attori()}">
+					<c:forEach var="current" items="${listF}">
+						<option value="${current.getId()}">
 							${current.getNome()}</option>
 					</c:forEach>
 					

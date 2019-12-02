@@ -6,24 +6,24 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Rimuovere Attori</title>
+<title>Rimuovere Casa Prodruttrice</title>
 <link href="css/menunewfi.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<div id="wrapper">
+<div id="wrapper">
 		<div id="subscribeBox">
 			<h2>
-				<span class="thin"><p>Seleziona l`attore da rimuovere.</p></span>
+				<span class="thin"><p>Seleziona la casa produttrice da rimuovere.</p></span>
 			</h2>
 
 			<form class="subscribeForm" name="Subscription Form" method="post"
 				action="remAttore">
 
-				<p>Seleziona Attori</p>
-				<select id="id_attori" name="id_attori">
+				<p>Seleziona Casa Produttrice</p>
+				<select id="id_casa_produttrice" name="id_casa_produttrice">
 					<option></option>
-					<c:forEach var="current" items="${listA}">
-						<option value="${current.getid_Attori()}">
+					<c:forEach var="current" items="${listCP}">
+						<option value="${current.getid_Cas_Prod()}">
 							${current.getNome()}</option>
 					</c:forEach>
 					
