@@ -35,6 +35,7 @@ public class UtilsDAO {
 		return dao;
 	}
 	
+	
 	public void remAttori(int id) throws SQLException {
 		Attori attori = getAttori(id);
 		
@@ -76,11 +77,6 @@ public class UtilsDAO {
 		return allCaseProduttrici;
 	}
 	
-//	public List<CaseProduttrici> getCaseProduttrici() throws SQLException {
-//		TypedQuery<CaseProduttrici> q = em.createQuery("SELECT v FROM casa_produttrice v", CaseProduttrici.class);
-//		List<CaseProduttrici> allCaseProduttrici = q.getResultList();
-//		return allCaseProduttrici;
-//	}
 	public CaseProduttrici getCaseProduttrici(int id) throws SQLException{
 		return em.find(CaseProduttrici.class, id);
 	}
