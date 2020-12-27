@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://utils.main.it" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://utils.main.it" xmlns:intf="http://utils.main.it" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://utils.main.it" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="findAttoreById">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="findAttoreByIdResponse">
+    <complexType>
+     <sequence>
+      <element name="findAttoreByIdReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="findFilmById">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="findFilmByIdResponse">
+    <complexType>
+     <sequence>
+      <element name="findFilmByIdReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="findCasaProById">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="findCasaProByIdResponse">
+    <complexType>
+     <sequence>
+      <element name="findCasaProByIdReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="findAttoreByIdRequest">
+
+      <wsdl:part element="impl:findAttoreById" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="findFilmByIdResponse">
+
+      <wsdl:part element="impl:findFilmByIdResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="findAttoreByIdResponse">
+
+      <wsdl:part element="impl:findAttoreByIdResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="findCasaProByIdRequest">
+
+      <wsdl:part element="impl:findCasaProById" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="findCasaProByIdResponse">
+
+      <wsdl:part element="impl:findCasaProByIdResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="findFilmByIdRequest">
+
+      <wsdl:part element="impl:findFilmById" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="FilmWS">
+
+      <wsdl:operation name="findAttoreById">
+
+         <wsdl:input message="impl:findAttoreByIdRequest" name="findAttoreByIdRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:findAttoreByIdResponse" name="findAttoreByIdResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="findFilmById">
+
+         <wsdl:input message="impl:findFilmByIdRequest" name="findFilmByIdRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:findFilmByIdResponse" name="findFilmByIdResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="findCasaProById">
+
+         <wsdl:input message="impl:findCasaProByIdRequest" name="findCasaProByIdRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:findCasaProByIdResponse" name="findCasaProByIdResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="FilmWSSoapBinding" type="impl:FilmWS">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="findAttoreById">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="findAttoreByIdRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="findAttoreByIdResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="findFilmById">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="findFilmByIdRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="findFilmByIdResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="findCasaProById">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="findCasaProByIdRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="findCasaProByIdResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="FilmWSService">
+
+      <wsdl:port binding="impl:FilmWSSoapBinding" name="FilmWS">
+
+         <wsdlsoap:address location="http://localhost:8080/Filmografia_pro/services/FilmWS"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
